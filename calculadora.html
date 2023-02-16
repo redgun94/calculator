@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="container" class="container">
+        <div id="result-section" class="result">
+            <div id="last-result" class="last-result">
+
+            </div>
+            <div id="current-result" class="current-result">
+                <h1></h1>
+            </div>
+        </div>
+        <div id="operations-section" class="operations">
+            <div>
+                <input type="button" name="mode" value="off" class="switch-theme">
+                <label>Switch to dark theme</label>
+            </div>
+            <div class="operation-button">
+                <button type="button" class="history-button">^</button>
+            </div>
+        </div>
+        <div id="numbers" class="numbers">
+            <button type="reset" class="number-button bg-color-C" value="clc" onclick = "clc(event)" id="clear">C</button>
+            <button type="button" class="number-button bg-color-opert" value="$" onclick = "getButton(event)" id="raiz">r</button>
+            <button type="button" class="number-button bg-color-number" value="7" onclick = "getButtonNum(event)" id="7">7</button>
+            <button type="button" class="number-button bg-color-number" value="4" onclick = "getButtonNum(event)" id="4">4</button>
+            <button type="button" class="number-button bg-color-number" value=1 id="1" onclick = "getButtonNum(event)" >1</button>
+            <button type="button" class="number-button bg-color-number" onclick = "getButtonNum(event)"  value="." id=".">.</button>
+            <button type="button" class="number-button bg-color-opert"  value="(" onclick = "getSymbol(event)"  id="(">(</button>
+            <button type="button" class="number-button bg-color-opert"  value="\" onclick = "getButton(event)"  id="\">\</button>
+            <button type="button" class="number-button bg-color-number" value="8" onclick = "getButtonNum(event)"  id="8">8</button>
+            <button type="button" class="number-button bg-color-number" value="5" onclick = "getButtonNum(event)"  id="5">5</button>
+            <button type="button" class="number-button bg-color-number" value="2" onclick = "getButtonNum(event)"  id="2">2</button>
+            <button type="button" class="number-button bg-color-number" value="0" onclick = "getButtonNum(event)"  id="0">0</button>
+            <button type="button" class="number-button bg-color-opert"  value=")" onclick = "getSymbol(event)" id=")">)</button>
+            <button type="button" class="number-button bg-color-opert"  value="!" onclick = "getButton(event)" id="!">!</button>
+            <button type="button" class="number-button bg-color-number" value="9" onclick = "getButtonNum(event)"  id="9">9</button>
+            <button type="button" class="number-button bg-color-number" value="6" onclick = "getButtonNum(event)"  id="6">6</button>
+            <button type="button" class="number-button bg-color-number" value="3" onclick = "getButtonNum(event)"  id="3">3</button>
+            <button type="button" class="number-button bg-color-number" value="d" onclick = "getButton(event)"  id="del">d</button>
+            <button type="button" class="number-button bg-color-purp" value="multi" onclick = "getButton(event)" id="*">x</button>
+            <button type="button" class="number-button bg-color-purp" value="div" onclick = "getButton(event)" id="/">/</button>
+            <button type="button" class="number-button bg-color-purp" value="less" onclick = "getButton(event)" id="-">-</button>
+            <button type="button" class="number-button bg-color-purp" value="sum" onclick = "getButton(event)" id="+" >+</button>
+            <button type="button" class="number-button bg-color-darkpurp" value="=" onclick = "calculator(event)" id="=" style="flex-grow: 2;">=</button>
+        </div>
+    </div>
+        <script src="./script.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html data-theme="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>calculator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="stylev2.css">
+    </head>
+    <body>
+            <form action="" name="calculator">
+                <input class="inp" type="text" name="ans" value="" autocomplete="off"  value= "0" placeholder="= " contenteditable="false" readonly>
+                <div class="switch" name = "switch">
+                    <label class="form-switch">
+                        <input id="theme-switch" type="checkbox" onratechange="">
+                        <span id="span"></span>
+                        <span name = "theme" id="theme"></span> 
+                      </label>
+                      <button type="button" class="history-button updown-arrow" onclick="historial()">&#8596</button>
+                </div>
+                <div id="numbers" class="numbers">
+                    <button type="button" class="number-button bg-color-C " value="clc"  id="clc" onclick="document.calculator.ans.value = '' ">C</button>
+                    <button type="button" class="number-button bg-color-opert" value="$" onclick = "document.calculator.ans.value = squareroot(document.calculator.ans.value)" id="raiz">r</button>
+                    <button type="button" name="siete" class="number-button bg-color-number" value="7" onclick = "document.calculator.ans.value+= document.calculator.siete.value" id="7">7</button>
+                    <button type="button" class="number-button bg-color-number" value="4" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='4' : document.calculator.ans.value +='4'" id="4">4</button>
+                    <button type="button" class="number-button bg-color-number" value=1 id="1" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='1' : document.calculator.ans.value +='1'" >1</button>
+                    <button type="button" class="number-button bg-color-number" value="." id="." onclick="document.calculator.ans.value+='.'">.</button>
+                    <button type="button" class="number-button bg-color-opert"  value="(" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='(' : document.calculator.ans.value +='('"  id="(">(</button>
+                    <button type="button" class="number-button bg-color-opert"  value="\" onclick = "document.calculator.ans.value = porcient(document.calculator.ans.value)"  id="\">\</button>
+                    <button type="button" class="number-button bg-color-number" value="8" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='8' : document.calculator.ans.value +='8'"  id="8">8</button>
+                    <button type="button" class="number-button bg-color-number" value="5" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='5' : document.calculator.ans.value +='5'"  id="5">5</button>
+                    <button type="button" class="number-button bg-color-number" value="2" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='2' : document.calculator.ans.value +='2'"  id="2">2</button>
+                    <button type="button" class="number-button bg-color-number" value="0" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='0' : document.calculator.ans.value +='0'"  id="0">0</button>
+                    <button type="button" class="number-button bg-color-opert"  value=")" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value =')' : document.calculator.ans.value +=')'" id=")">)</button>
+                    <button type="button" class="number-button bg-color-opert"  value="!" onclick = "document.calculator.ans.value = opposite(document.calculator.ans.value)" id="!">-+</button>
+                    <button type="button" class="number-button bg-color-number" value="9" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='9' : document.calculator.ans.value +='9'"  id="9">9</button>
+                    <button type="button" class="number-button bg-color-number" value="6" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='6' : document.calculator.ans.value +='6'"  id="6">6</button>
+                    <button type="button" class="number-button bg-color-number" value="3" onclick = "(document.calculator.ans.value === '0') ? document.calculator.ans.value ='3  ' : document.calculator.ans.value +='3'"  id="3">3</button>
+                    <button type="button" class="number-button bg-color-number" value="d" onclick = "document.calculator.ans.value = lastdel(document.calculator.ans.value)"  id="del">del</button>
+                    <button type="button" class="number-button bg-color-purp" value="multi" onclick ="document.calculator.ans.value+='*'" id="*">x</button>
+                    <button type="button" class="number-button bg-color-purp" value="div"   onclick ="document.calculator.ans.value+='/'" id="/">/</button>
+                    <button type="button" class="number-button bg-color-purp" value="less"  onclick ="document.calculator.ans.value+='-'" id="-">-</button>
+                    <button type="button" class="number-button bg-color-purp" value="sum"   onclick ="document.calculator.ans.value+='+'" id="+" >+</button>
+                    <button type="button" class="number-button bg-color-darkpurp" value="=" onclick = "document.calculator.ans.value = calc(document.calculator.ans.value)" style="flex-grow: 2;">=</button>
+                </div>
+            </form>
+
+    <script src="./scriptv2.js" >
+    </script>
+    </body>
+</html>
