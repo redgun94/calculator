@@ -130,12 +130,25 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
 }
 let flag; 
  function historial(){
-    if(document.getElementById("boxHistorial") == null){
+    const mql = window.matchMedia('(max-width: 620px)');
+    
+    if(document.getElementById("boxHistorial") == null && !mql.matches){
         boxHistorial = document.createElement("div");
         boxHistorial.setAttribute("id","boxHistorial");
         document.body.appendChild(boxHistorial);
         boxHistorial = document.getElementById("boxHistorial");
         boxHistorial.classList.add("history-box");
+        showHistorial();
+        return flag = true;   
+    }
+    else if(document.getElementById("boxHistorial") == null && mql.matches){
+        console.log(mql.matches);
+        const numbers = document.getElementById("numbers");
+        boxHistorial = document.createElement("div");
+        boxHistorial.setAttribute("id","boxHistorial");
+        numbers.insertBefore(boxHistorial,numbers.children[0]);
+        boxHistorial = document.getElementById("boxHistorial");
+        boxHistorial.classList.add("history-box-mobile");
         showHistorial();
         return flag = true;   
     }
