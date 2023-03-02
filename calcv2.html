@@ -23,9 +23,9 @@
                         <span id="span"></span>
                         <span name = "theme" id="theme"></span> 
                       </label>
-                      <button type="button" class="history-button updown-arrow" onclick="historial()" id="history-button" name="history-button">&#8596</button>
+                      <button type="button" class="history-button updown-arrow" onclick="historial(event)" id="history-button"  name="history-button">&#8596</button>
                 </div>
-                <div id="numbers" class="numbers">
+                <div id="numbers" state = "non-clicked" class="numbers">
                     <button type="button" class="number-button bg-color-C " value="clc"  id="clc" onclick="document.calculator.ans.value = '' ">C</button>
                     <button type="button" class="number-button bg-color-opert" value="$" onclick = "document.calculator.ans.value = squareroot(document.calculator.ans.value)" id="raiz">r</button>
                     <button type="button" name="siete" class="number-button bg-color-number" value="7" onclick = "document.calculator.ans.value+= document.calculator.siete.value" id="7">7</button>

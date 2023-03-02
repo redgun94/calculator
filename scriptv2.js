@@ -131,24 +131,17 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
 let flag; 
  function historial(){
     const mql = window.matchMedia('(max-width: 620px)');
-    
+    const numbers = document.getElementById("numbers");
+    numbers.setAttribute("state","non-clicked");
     if(document.getElementById("boxHistorial") == null && !mql.matches){
-        boxHistorial = document.createElement("div");
-        boxHistorial.setAttribute("id","boxHistorial");
-        document.body.appendChild(boxHistorial);
-        boxHistorial = document.getElementById("boxHistorial");
-        boxHistorial.classList.add("history-box");
+        numbers.setAttribute("state","clicked");
+        constructorHistoryBox();
         showHistorial();
         return flag = true;   
     }
     else if(document.getElementById("boxHistorial") == null && mql.matches){
-        console.log(mql.matches);
-        const numbers = document.getElementById("numbers");
-        boxHistorial = document.createElement("div");
-        boxHistorial.setAttribute("id","boxHistorial");
-        numbers.insertBefore(boxHistorial,numbers.children[0]);
-        boxHistorial = document.getElementById("boxHistorial");
-        boxHistorial.classList.add("history-box-mobile");
+        numbers.setAttribute("state","clicked");
+        constructorHistoryBoxMobile(numbers);
         showHistorial();
         return flag = true;   
     }
@@ -188,3 +181,39 @@ function showHistorial(){
     }
 
 }
+function constructorHistoryBox(){
+    boxHistorial = document.createElement("div");
+    boxHistorial.setAttribute("id","boxHistorial");
+    document.body.appendChild(boxHistorial);
+    boxHistorial = document.getElementById("boxHistorial");
+    boxHistorial.classList.add("history-box");
+}
+function constructorHistoryBoxMobile(numbers){
+    boxHistorial = document.createElement("div");
+    boxHistorial.setAttribute("id","boxHistorial");
+    numbers.insertBefore(boxHistorial,numbers.children[0]);
+    boxHistorial = document.getElementById("boxHistorial");
+    boxHistorial.classList.add("history-box-mobile");
+}
+//window.addEventListener("resize",() => historial());
+const mql = window.matchMedia("(max-width: 620px)");
+
+mql.onchange = (e) => {
+    const numbers = document.getElementById("numbers");
+  if (e.matches) {
+    /* the viewport is 600 pixels wide or less */
+    if(numbers.getAttribute("state") === "clicked"){
+        console.log(numbers.getAttribute("state"));
+        boxHistorial.remove();
+        constructorHistoryBoxMobile(numbers);
+        showHistorial();
+    } 
+  } else {
+    /* the viewport is more than 600 pixels wide */
+    if(numbers.getAttribute("state") === "clicked"){
+        boxHistorial.remove();
+        constructorHistoryBox();
+        showHistorial();
+    } 
+  }
+};

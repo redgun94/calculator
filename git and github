@@ -1,0 +1,16 @@
+git : 
+- init- 
+-add- para agregar el archivo
+-commit -m ""-
+status
+log 
+
+en el archivo .gitignore se le agregan los archivos que quiero que sean ingorados para que no aparezca en el track.
+
+
+git checkout es para regresar a una version especifica de la rama.
+
+reset --hard "codigo del commit" y te ubicara en ese commit quitando los cambios posteriores.
+reflog te muestra todos los cambios a diferencia de log que solo se quedan con los del reset correspondiente
+checkout "codigo del commit" te regresa hacia adelante en caso que se quiera.
+tag -> para hacer una etiqueta en el commit especifico, util se le agrega un identificador entendible y usable para desplazarce entre los commit mediante checkout
